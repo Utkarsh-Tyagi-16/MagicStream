@@ -11,9 +11,8 @@
 **/.env.production.local
 
 # Go / Compiled Binaries
-**/*.exe
-**/server
-**/server.exe
+Server/MagicStreamServer/server
+Server/MagicStreamServer/server.exe
 
 # React Build Outputs
 **/dist/
