@@ -8,15 +8,16 @@ import (
 )
 
 func SetupProtectedRoutes(router *gin.Engine, client *mongo.Client) {
-	router.Use(middleware.AuthMiddleWare())
+	protected := router.Group("/")
+	protected.Use(middleware.AuthMiddleWare())
 
-	router.GET("/movie/:imdb_id", controller.GetMovie(client))
-	router.POST("/addmovie", controller.AddMovie(client))
-	router.GET("/recommendedmovies", controller.GetRecommendedMovies(client))
-	router.PATCH("/updatereview/:imdb_id", controller.AdminReviewUpdate(client))
+	protected.GET("/movie/:imdb_id", controller.GetMovie(client))
+	protected.POST("/addmovie", controller.AddMovie(client))
+	protected.GET("/recommendedmovies", controller.GetRecommendedMovies(client))
+	protected.PATCH("/updatereview/:imdb_id", controller.AdminReviewUpdate(client))
 
 	// Watchlist routes
-	router.POST("/watchlist/add", controller.AddToWatchlist(client))
-	router.POST("/watchlist/remove", controller.RemoveFromWatchlist(client))
-	router.GET("/watchlist/:user_id", controller.GetWatchlist(client))
+	protected.POST("/watchlist/add", controller.AddToWatchlist(client))
+	protected.POST("/watchlist/remove", controller.RemoveFromWatchlist(client))
+	protected.GET("/watchlist/:user_id", controller.GetWatchlist(client))
 }
