@@ -1,0 +1,23 @@
+.magic-navbar {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+.magic-search {
+    background-color: var(--glass-border);
+    border: 1px solid var(--glass-border);
+    color: var(--text-color);
+}
+
+.magic-search:focus {
+    background-color: var(--glass-border);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(0, 242, 254, 0.25);
+    color: var(--text-color);
+}
+
+.magic-search::placeholder {
+    color: var(--text-muted);
+}

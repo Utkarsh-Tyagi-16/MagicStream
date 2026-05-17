@@ -1,0 +1,47 @@
+.skeleton-card {
+    background: var(--glass-bg);
+}
+
+.skeleton-img {
+    height: 380px;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.05) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+}
+
+[data-theme='light'] .skeleton-img,
+[data-theme='light'] .skeleton-text {
+    background: linear-gradient(90deg, rgba(0,0,0,0.05) 25%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.05) 75%);
+    background-size: 200% 100%;
+}
+
+.skeleton-text {
+    background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.05) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 4px;
+}
+
+.skeleton-title {
+    height: 20px;
+    width: 80%;
+}
+
+.skeleton-badge {
+    height: 25px;
+    width: 30%;
+    border-radius: 20px;
+}
+
+.skeleton-badge-small {
+    height: 25px;
+    width: 20%;
+    border-radius: 20px;
+}
+
+@keyframes shimmer {
+    to {
+        background-position: -200% 0;
+    }
+}
